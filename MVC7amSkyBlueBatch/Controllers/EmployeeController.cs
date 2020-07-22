@@ -69,5 +69,64 @@ namespace MVC7amSkyBlueBatch.Controllers
             return View();
         }
 
+
+        public ActionResult GetDataViewModel()
+        {
+            empDepart objdept = new Models.empDepart();
+            Employee objshrey = new Employee();
+            objshrey.EmpId = 1211;
+            objshrey.EmpName = "shrey";
+            objshrey.EmpSalary = 289000;
+
+            Department dt = new Department();
+            dt.DeptId = 1211;
+            dt.DeptName = "IT";
+
+            objdept.emp = objshrey;
+            objdept.dept = dt;
+            //object model=objshrey;
+            return View(objdept);//ViewModel
+             
+        }
+        public ActionResult GetmultipleDataViewModel()
+        {
+            empDepartList objdept = new Models.empDepartList();
+
+            Employee objshrey = new Employee();
+            objshrey.EmpId = 1211;
+            objshrey.EmpName = "shrey";
+            objshrey.EmpSalary = 289000;
+
+            Employee objprasana = new Employee();
+            objprasana.EmpId = 1212;
+            objprasana.EmpName = "prasana";
+            objprasana.EmpSalary = 389000;
+
+            Department dt = new Department();
+            dt.DeptId = 1211;
+            dt.DeptName = "IT";
+
+            Department dt1 = new Department();
+            dt1.DeptId = 1212;
+            dt1.DeptName = "Network";
+
+            List<Employee> listempobj = new List<Employee>();
+            List<Department> listdepobj = new List<Department>();
+
+            listempobj.Add(objshrey);
+            listempobj.Add(objprasana);
+
+
+            listdepobj.Add(dt);
+            listdepobj.Add(dt1);
+
+            objdept.emp = listempobj;
+            objdept.dept = listdepobj;
+            //object model=objshrey;
+            return View(objdept);//ViewModel
+
+        }
+
+
     }
 }

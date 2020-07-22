@@ -1,0 +1,22 @@
+﻿@model  MVC7amSkyBlueBatch.Models.empDepartList
+@{
+    ViewBag.Title = "GetmultipleDataViewModel";
+}
+
+<h2>GetmultipleDataViewModel</h2>
+
+@foreach (var item in Model.emp)
+{
+    @item.EmpId<br />
+    @item.EmpName<br />
+    @item.EmpSalary<br /><br />
+}
+
+<br /><br />
+
+
+@foreach (var item in Model.dept)
+{
+    @item.DeptId<br />
+    @item.DeptName<br /><br />
+}
