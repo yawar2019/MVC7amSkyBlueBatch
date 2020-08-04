@@ -1,0 +1,13 @@
+﻿@model MVC7amSkyBlueBatch.Models.Employee
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Default Index page is Called </h2>
+
+@Model.EmpId<br />@Model.EmpName<br />@Model.EmpSalary<br />
+
+    @Html.Partial("_MyPartialView", Model);
+    
+
+@{Html.RenderPartial("_MyPartialView", Model);}

@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A5ABE646-4E04-40DD-9194-B9BEFFE3B1D2}</ProjectGuid>
+    <ProjectGuid>{F4BF3692-DA2A-4E6A-B157-B69F2EED78C2}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MVC7amSkyBlueBatch</RootNamespace>
-    <AssemblyName>MVC7amSkyBlueBatch</AssemblyName>
+    <RootNamespace>Adonet</RootNamespace>
+    <AssemblyName>Adonet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -120,6 +120,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Database\AdonetScript.sql" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
@@ -135,11 +136,10 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
-    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -150,21 +150,12 @@
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Employee\GetData.cshtml" />
+    <Content Include="Views\Default\Index.cshtml" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Employee\GetmeView1211.cshtml" />
-    <Content Include="Views\Employee\sendData.cshtml" />
-    <Content Include="Views\Employee\GetDataViewModel.cshtml" />
-    <Content Include="Views\Employee\GetmultipleDataViewModel.cshtml" />
-    <Content Include="Views\Employee\getmyViewExample.cshtml" />
-    <Content Include="Views\Default\Index.cshtml" />
-    <Content Include="Views\Employee\getPartialView.cshtml" />
-    <Content Include="Views\Shared\_MyPartialView.cshtml" />
-    <Content Include="Views\Default\Index2.cshtml" />
-    <Content Include="Views\Default\Index3.cshtml" />
+    <Content Include="Views\Default\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -188,9 +179,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>54366</DevelopmentServerPort>
+          <DevelopmentServerPort>54535</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54366/</IISUrl>
+          <IISUrl>http://localhost:54535/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

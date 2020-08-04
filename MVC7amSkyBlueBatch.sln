@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC7amSkyBlueBatch", "MVC7amSkyBlueBatch\MVC7amSkyBlueBatch.csproj", "{A5ABE646-4E04-40DD-9194-B9BEFFE3B1D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adonet", "Adonet\Adonet.csproj", "{F4BF3692-DA2A-4E6A-B157-B69F2EED78C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testRegister", "testRegister\testRegister.csproj", "{55913341-E49A-42D0-9066-22155D4E2BC9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{A5ABE646-4E04-40DD-9194-B9BEFFE3B1D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5ABE646-4E04-40DD-9194-B9BEFFE3B1D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5ABE646-4E04-40DD-9194-B9BEFFE3B1D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4BF3692-DA2A-4E6A-B157-B69F2EED78C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4BF3692-DA2A-4E6A-B157-B69F2EED78C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4BF3692-DA2A-4E6A-B157-B69F2EED78C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4BF3692-DA2A-4E6A-B157-B69F2EED78C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55913341-E49A-42D0-9066-22155D4E2BC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55913341-E49A-42D0-9066-22155D4E2BC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55913341-E49A-42D0-9066-22155D4E2BC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55913341-E49A-42D0-9066-22155D4E2BC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

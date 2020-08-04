@@ -27,9 +27,10 @@ namespace MVC7amSkyBlueBatch.Controllers
 
 
 
-        public string GetmeData(string id) {
-        
-            return id+","+Request.QueryString["Ename"]+","+Request.QueryString["ESalary"] + "," + Request.QueryString["Department"];
+        public string GetmeData(string id)
+        {
+
+            return id + "," + Request.QueryString["Ename"] + "," + Request.QueryString["ESalary"] + "," + Request.QueryString["Department"];
         }
         public ActionResult GetmeView()
         {
@@ -38,7 +39,7 @@ namespace MVC7amSkyBlueBatch.Controllers
 
         public ActionResult sendData()
         {
-           
+
 
             List<Employee> listobj = new List<Employee>();
 
@@ -65,7 +66,7 @@ namespace MVC7amSkyBlueBatch.Controllers
             ViewBag.Empdetail = listobj;
 
 
-             
+
             return View();
         }
 
@@ -86,7 +87,7 @@ namespace MVC7amSkyBlueBatch.Controllers
             objdept.dept = dt;
             //object model=objshrey;
             return View(objdept);//ViewModel
-             
+
         }
         public ActionResult GetmultipleDataViewModel()
         {
@@ -127,6 +128,91 @@ namespace MVC7amSkyBlueBatch.Controllers
 
         }
 
+        public ViewResult getmyViewExample()
+        {
+            return View("~/Views/Default/Index.cshtml");
+        }
 
+        public ViewResult getmyViewExample1()
+        {
+            Employee objshrey = new Employee();
+            objshrey.EmpId = 1211;
+            objshrey.EmpName = "shrey";
+            objshrey.EmpSalary = 289000;
+
+            return View("~/Views/Default/Index.cshtml", objshrey);
+        }
+
+        //A view whcih can be called inside another View is called as partial view
+
+        public PartialViewResult getPartialView()
+        {
+            Employee objshrey = new Employee();
+            objshrey.EmpId = 1211;
+            objshrey.EmpName = "shrey";
+            objshrey.EmpSalary = 289000;
+
+            return PartialView("_MyPartialView", objshrey);
+        }
+
+        public RedirectResult gotourl()
+        {
+            return Redirect("http://www.facebook.com");
+        }
+        public RedirectResult gotoMvcurl()
+        {
+            return Redirect("~/Employee/getPartialView");
+        }
+
+        public RedirectToRouteResult RedirectMyRoute()
+        {
+            return RedirectToRoute("spiderman");
+        }
+        public RedirectToRouteResult RedirectToMethod()
+        {
+            Employee objshrey = new Employee();
+            objshrey.EmpId = 1211;
+            objshrey.EmpName = "shrey";
+            objshrey.EmpSalary = 289000;
+
+            return RedirectToAction("Index3", "Default", objshrey);//new {id=1 },objshrey
+        }
+        public FileResult getMeFile()
+        {
+            return File("~/Web.config", "text");
+        }
+        public FileResult getMeFile2()
+        {
+            return File("~/Web.config", "application/xml");
+        }
+        public FileResult downloadMeFile2()
+        {
+            return File("~/Web.config", "application/xml", "myfile");
+        }
+        public ContentResult getContent(int? id)
+        {
+            if (id == 1)
+            {
+                return Content("Hello World");
+            }
+            else if (id == 2)
+            {
+                return Content("<p style=color:red>Hello World</p>");
+
+            }
+            else
+            {
+                return Content("<script>alert('Hello world')</script>");
+            }
+        }
+        public JsonResult getjsonData()
+        {
+            Employee objshrey = new Employee();
+            objshrey.EmpId = 1211;
+            objshrey.EmpName = "shrey";
+            objshrey.EmpSalary = 289000;
+
+            return Json(objshrey, JsonRequestBehavior.AllowGet);
+        }
     }
 }
