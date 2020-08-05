@@ -32,9 +32,50 @@ namespace Adonet.Controllers
             {
                 return View();
             }
-            
+
         }
 
-        []
+        [HttpGet]
+        public ActionResult Edit(int? id)
+        {
+           EmployeeModel empobj= db.GetEmployeeById(id);
+            return View(empobj);
+        }
+        [HttpPost]
+        public ActionResult Edit(EmployeeModel obj)
+        {
+            int i = db.UpdateEmployeee(obj);
+            if (i > 0)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
+
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            EmployeeModel empobj = db.GetEmployeeById(id);
+            return View(empobj);
+        }
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int? id)
+        {
+            int i = db.DeleteEmployee(id);
+            if (i > 0)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
+
+        }
     }
 }
