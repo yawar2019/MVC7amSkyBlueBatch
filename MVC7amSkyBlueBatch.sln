@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adonet", "Adonet\Adonet.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testRegister", "testRegister\testRegister.csproj", "{55913341-E49A-42D0-9066-22155D4E2BC9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBasedFirstApproach", "DataBasedFirstApproach\DataBasedFirstApproach.csproj", "{0515776E-F54C-4DDA-B4EF-54EE7CAFEC78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{55913341-E49A-42D0-9066-22155D4E2BC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55913341-E49A-42D0-9066-22155D4E2BC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55913341-E49A-42D0-9066-22155D4E2BC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0515776E-F54C-4DDA-B4EF-54EE7CAFEC78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0515776E-F54C-4DDA-B4EF-54EE7CAFEC78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0515776E-F54C-4DDA-B4EF-54EE7CAFEC78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0515776E-F54C-4DDA-B4EF-54EE7CAFEC78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
