@@ -1,0 +1,68 @@
+public class CustomerDetailController : Controller
+    {
+        // GET: CustomerDetail
+        CustomerContext db = new CustomerContext();
+        public ActionResult Index()
+        {
+            List<Customer> obj = db.Customers.ToList();
+            return View(obj);
+        }
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(FormCollection formobj)
+        {
+            Customer custobj = new Customer();
+            custobj.CustName = formobj["CustName"];
+            custobj.EmailId = formobj["EmailId"];
+            custobj.CustMobileNo= formobj["CustMobileNo"];
+            db.Customers.Add(custobj);
+            int i = db.SaveChanges();
+            if (i > 0)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
+        }
+        [HttpGet]
+        public ActionResult Edit(int ?Id)
+        {
+            Customer custobj = db.Customers.Find(Id);
+            return View(custobj);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Customer custobj)
+        {
+            Customer obj = db.Customers.Find(custobj.CustId);
+            obj.CustName = custobj.CustName;
+            obj.CustMobileNo = custobj.CustMobileNo;
+            obj.EmailId = custobj.EmailId;
+            db.Entry(obj).State = EntityState.Modified;
+            db.SaveChanges();
+            return View();
+        }
+        [HttpGet]
+        public ActionResult Delete(int? Id)
+        {
+            Customer custobj = db.Customers.Find(Id);
+            return View(custobj);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int?Id)
+        {
+            Customer obj = db.Customers.Find(Id);
+            db.Customers.Remove(obj);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+    }
+}

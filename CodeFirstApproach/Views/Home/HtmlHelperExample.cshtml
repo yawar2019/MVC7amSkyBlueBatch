@@ -1,0 +1,40 @@
+﻿@model CodeFirstApproach.Models.EmployeeModel
+@{
+    ViewBag.Title = "HtmlHelperExample";
+}
+<script>
+    function fun() {
+        alert('hello world');
+    }
+</script>
+<h2>HtmlHelperExample</h2>
+
+@Html.TextBox("FirstName1",@Model.EmpName,new {@style="color:red;background-color:skyblue;",@class="form-control", @onclick = "fun()" }) 
+@Html.TextBoxFor(s=>s.EmpName, new { @style = "color:red;background-color:skyblue;", @class = "form-control", @onclick = "fun()" })
+<input type="text" id="lastname1" name="lastname" value="kim" style="color:red;background-color:skyblue;" class="form-control" onclick="fun()" /><br />
+
+@Html.Password("pwd","abc@123")<br />
+@Html.CheckBox("java")<span>java</span>
+@Html.CheckBox("Dotnet",true)<span>java</span>
+@Html.CheckBox("Php")<span>java</span><br />
+
+@Html.RadioButton("Gender","Male",true)<span>Male</span>
+@Html.RadioButton("Gender", "FeMale")<span>Female</span>
+<br />
+@Html.DropDownList("Country",new List<SelectListItem>() {
+new SelectListItem {Text="India",Value="1" },
+new SelectListItem {Text="China",Value="2",Selected=true },
+new SelectListItem {Text="US",Value="3" }
+
+},"Select Country")
+<br />
+
+@Html.TextArea("Address","Hyderabad",10,15,null)
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <span>File</span>
+    <input type="file" id="fileupload" name="fileupload" />
+    <input type="submit" value="upload" />
+}
+@ViewBag.msg
