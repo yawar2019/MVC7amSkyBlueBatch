@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using testRegister.ServiceReference1;
 namespace testRegister.Controllers
 {
     public class HomeController : Controller
@@ -23,8 +23,9 @@ namespace testRegister.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
-
-            return View();
+            ServiceReference1.Service2Client obj = new ServiceReference1.Service2Client();
+           var c= obj.Add(12, 15);
+            return Content(c.ToString());
         }
     }
 }

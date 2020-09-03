@@ -86,10 +86,7 @@ namespace CodeFirstApproach.Controllers
         {
             EmployeeModel obj = new EmployeeModel();
             obj.EmpName = "Kat";
-
-
             return View(obj);
-
         }
 
         [HttpPost]
@@ -101,8 +98,13 @@ namespace CodeFirstApproach.Controllers
             ViewBag.msg = "uploaded successfully";
             EmployeeModel obj = new EmployeeModel();
             obj.EmpName = "Kat";
-            return View("HtmlHelperExample",obj);
+            return View("HtmlHelperExample", obj);
         }
 
+        [HttpGet]
+        public ActionResult ValidationExample()
+        {
+            return View();
+        }
     }
 }

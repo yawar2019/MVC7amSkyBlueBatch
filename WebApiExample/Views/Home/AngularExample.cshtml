@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "AngularExample";
+}
+
+<h2>AngularExample</h2>
+
+<script src="~/Scripts/angularjs2.min.js"></script>
+<script src="~/Scripts/MyController.js"></script>
+@*//expressions*@
+@*<div ng-app="myApp" ng-controller="myctrl">
+    {{5+5}}
+    <p ng-init="age=10">the age is below</p><br />
+    <p ng-bind="age"></p><br />
+    <input type="text" ng-model="age" />
+    {{age}}
+    <br />
+    <input type="text" ng-model="firstname" />
+    {{firstname}}
+</div>*@
+<div ng-app="myApp" ng-controller="myCtrl">
+    <table class="table-bordered">
+        <tr>
+            <th>DeptId</th>
+            <th>EmpId</th>
+            <th>EmpName</th>
+            <th>EmpSalary</th>
+        </tr>
+        <tr ng-repeat="x in EmployeeData">
+            <td>{{x.DeptId}}</td>
+            <td>{{x.EmpId}}</td>
+            <td>{{x.EmpName}}</td>
+            <td>{{x.EmpSalary}}</td>
+        </tr>
+    </table>
+
+    <form>
+        <label>DeptId</label>
+        <input type="text" ng-model="DeptId" /><br />
+        <label>EmpName</label>
+        <input type="text" ng-model="EmpName" /><br />
+        <label>EmpSalary</label>
+        <input type="text" ng-model="EmpSalary" /><br />
+        <input type="button" value="Save" ng-click="Save()" />
+    </form>
+</div>

@@ -1,4 +1,5 @@
-﻿@model CodeFirstApproach.Models.EmployeeModel
+﻿@using CodeFirstApproach.HtmlHelper
+@model CodeFirstApproach.Models.EmployeeModel
 @{
     ViewBag.Title = "HtmlHelperExample";
 }
@@ -38,3 +39,14 @@ new SelectListItem {Text="US",Value="3" }
     <input type="submit" value="upload" />
 }
 @ViewBag.msg
+<br />
+@MyHelper.MyLabel("I Accept the Agreement")
+@Html.createUrControl("file")<br />
+@Html.createUrControl("text")<br />
+
+
+@helper labelbyrazzorcode(string content)
+{
+    <label>@content</label>
+}
+@labelbyrazzorcode("hi this is ali")
